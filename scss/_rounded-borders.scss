@@ -1,0 +1,13 @@
+@mixin roundAllBorders {
+  border-radius: 8px;
+}
+
+@mixin roundBottomBorders {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+@mixin roundTopBorders {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}

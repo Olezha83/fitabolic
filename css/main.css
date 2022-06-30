@@ -1,8 +1,43 @@
+@import url(./reset.css);
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 body {
   background: url("../img/background-repetition.jpg") 0 26px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 14px;
+  color: #fff;
 }
 
 .wrapper {
   width: 980px;
+  margin: 0 auto;
+}
+
+ul.user {
+  font-size: 0;
+  margin-left: 344px;
+}
+
+ul.user li {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  width: 123px;
+  padding: 5px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#484848), to(#353535));
+  background: linear-gradient(#484848, #353535);
+}
+
+ul.user li:not(:first-child) {
+  margin-left: 4px;
+}
+
+.shop-phone {
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 344px;
 }
 /*# sourceMappingURL=main.css.map */
