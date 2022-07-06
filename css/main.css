@@ -1,10 +1,20 @@
 @import url(./reset.css);
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 body {
-  background: url("../img/background-repetition.jpg") 0 26px;
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 14px;
   color: #fff;
+  background: url("../img/background-repetition.jpg") 0 26px;
+}
+
+button, input, a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -12,32 +22,192 @@ body {
   margin: 0 auto;
 }
 
-ul.user {
-  font-size: 0;
-  margin-left: 344px;
+header {
+  position: relative;
+  padding-bottom: 14px;
 }
 
-ul.user li {
+header .flex-container, header .basket, header nav {
+  z-index: 5;
+}
+
+header .flex-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0 386px 0 224px;
+}
+
+header .flex-container .inner-container ul {
+  font-size: 0;
+}
+
+header .flex-container .inner-container ul li {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
   display: inline-block;
+  font-size: 14px;
+  -webkit-box-shadow: 0 1px 3px #000000bf;
+          box-shadow: 0 1px 3px #000000bf;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, left bottom, from(#484848), to(#353535));
+  background: linear-gradient(#484848, #353535);
   text-align: center;
   width: 123px;
-  padding: 5px 0;
+  padding: 4px 0 7px;
+}
+
+header .flex-container .inner-container ul li:not(:first-child) {
+  margin-left: 4px;
+}
+
+header .flex-container .inner-container .phone {
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 43px 0 51px 0;
+}
+
+header .flex-container .inner-container .phone::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 41px;
+  bottom: -2px;
+  left: -53px;
+  background: url("../img/sprite.png") -276px -214px;
+}
+
+header .flex-container .search {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  -webkit-box-shadow: 0 1px 3px #000000bf;
+          box-shadow: 0 1px 3px #000000bf;
   background: -webkit-gradient(linear, left top, left bottom, from(#484848), to(#353535));
   background: linear-gradient(#484848, #353535);
 }
 
-ul.user li:not(:first-child) {
-  margin-left: 4px;
+header .flex-container .search input {
+  margin-left: 8px;
+  width: 182px;
+  height: 23px;
+  padding-left: 40px;
+  background: #606060;
+  border: 1px solid #969696;
 }
 
-.shop-phone {
-  font-size: 24px;
+header .flex-container .search button {
+  width: 106px;
+  height: 29px;
+  background: #ba9835;
   font-weight: 700;
-  margin-left: 344px;
+  border: 1px solid #000;
+  margin: 6px 16px 5px 11px;
+  cursor: pointer;
+}
+
+header nav {
+  position: relative;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  -webkit-box-shadow: 0 1px 3px #000000bf;
+          box-shadow: 0 1px 3px #000000bf;
+  background: -webkit-gradient(linear, left top, left bottom, from(#303030), to(#1e1e1e));
+  background: linear-gradient(#303030, #1e1e1e);
+  height: 40px;
+  margin: 5px 0 0 190px;
+}
+
+header nav ul {
+  margin: 0 20px 0 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header nav ul a {
+  display: block;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: transparent;
+  font-weight: 700;
+  padding: 11px 14px 20px;
+  white-space: nowrap;
+}
+
+header nav ul a:hover {
+  -webkit-box-shadow: 0 1px 2px #000000bf;
+          box-shadow: 0 1px 2px #000000bf;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, #bd9b36), to(#a8892b));
+  background: linear-gradient(#bd9b36 75%, #a8892b);
+}
+
+header .basket {
+  position: absolute;
+  width: 67px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  top: 0;
+  right: 0;
+  -webkit-box-shadow: 0 1px 2px #000000bf;
+          box-shadow: 0 1px 2px #000000bf;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(75%, #bd9b36), to(#a8892b));
+  background: linear-gradient(#bd9b36 75%, #a8892b);
+  text-align: center;
+  font-size: 0;
+}
+
+header .basket a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 36px 12px 6px 12px;
+}
+
+header .basket::before {
+  content: '';
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  top: 6px;
+  left: 19px;
+  background: url("../img/sprite.png") -276px -255px;
+  pointer-events: none;
+}
+
+header .sportsman {
+  position: absolute;
+  width: 455px;
+  height: 214px;
+  top: 0;
+  right: 0;
+  background: url("../img/sprite.png");
+}
+
+header .logo-bg {
+  position: absolute;
+  width: 276px;
+  height: 120px;
+  bottom: 0;
+  left: 0;
+  background: url("../img/sprite.png") 0 -214px;
+}
+
+header .logo {
+  position: absolute;
+  bottom: 6px;
+  left: 29px;
+}
+
+header .logo-bg, header .logo {
+  z-index: 10;
 }
 /*# sourceMappingURL=main.css.map */

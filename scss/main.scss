@@ -4,12 +4,27 @@
 @import './text-colors';
 @import './gradients';
 @import './rounded-borders';
+@import './inline_block';
+@import './absolute-elems';
+@import './absolute-positioning';
+@import './box-shadow';
+
 
 body {
-  background: url('../img/background-repetition.jpg') 0 26px;
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 14px;
-  color: #fff;
+  color: #fff;  
+  background: url('../img/background-repetition.jpg') 0 26px;
+}
+
+button, input, a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
 }
 
 .wrapper {
@@ -17,29 +32,152 @@ body {
   margin: 0 auto;
 }
 
-ul.user {
-  font-size: 0;
-  margin-left: 344px;
+header {
+  // outline: 1px solid wheat;
+  position: relative;
+  padding-bottom: 14px;
   
-  li {
+  .flex-container, .basket, nav {
+    z-index: 5;
+  }
+
+  .flex-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: 0 386px 0 224px;
+
+    .inner-container {
+      ul {
+        font-size: 0;
+        
+        li {
+          @include roundBottomBorders;
+          @include inlineBlock;
+          @include box-shadow(3);
+          cursor: pointer;
+          background: map-get($gradients, lightgray-gradient);
+          text-align: center;
+          width: 123px;
+          padding: 4px 0 7px;
+        }
+      
+        li:not(:first-child) {
+          margin-left: 4px;
+        }
+      }
+      
+      .phone {
+        position: relative;
+        font-size: 24px;
+        font-weight: 700;
+        margin: 43px 0 51px 0;
+      }
+
+      .phone::before {
+        @include absolute-pseudo-elem-WH(40, 41);
+        @include pos-BL(-2, -53);
+        background: url('../img/sprite.png') -276px -214px;
+      }
+    }
+
+    .search {
+      @include roundTopBorders;
+      @include box-shadow(3);
+      background: map-get($gradients, lightgray-gradient);
+  
+      input {
+        margin-left: 8px;
+        width: 182px;
+        height: 23px;
+        padding-left: 40px;
+        background: #606060;
+        border: 1px solid #969696;
+      }
+  
+      button {
+        width: 106px;
+        height: 29px;
+        background: map-get($background-colors, button-bg);
+        font-weight: 700;
+        border: 1px solid #000;
+        margin: 6px 16px 5px 11px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  nav {
+    position: relative;
     @include roundBottomBorders;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    display: inline-block;
+    @include box-shadow(3);
+    background: map-get($gradients, darkgray-gradient);
+    height: 40px;
+    margin: 5px 0 0 190px;
+
+    ul {
+      margin: 0 20px 0 90px;
+      display: flex;
+      justify-content: space-around;
+
+      a {
+        display: block;
+        @include roundBottomBorders;
+        background: transparent;
+        font-weight: 700;
+        padding: 11px 14px 20px;
+        white-space: nowrap;
+        
+        &:hover {
+          @include box-shadow(2);
+          background: map-get($gradients, sandy-gradient);
+        }
+      }
+    }
+  }
+    
+  .basket {
+    @include absolute-elem-W(67);
+    @include roundBottomBorders;
+    @include pos-TR0;
+    @include box-shadow(2);
+    background: map-get($gradients, sandy-gradient);
     text-align: center;
-    width: 123px;
-    padding: 5px 0;
-    background: map-get($gradients, lightgray-gradient);
+    font-size: 0;
+
+    a {
+      @include inlineBlock;
+      font-weight: 700;
+      padding: 36px 12px 6px 12px;
+    }
+
+    &::before {
+      @include absolute-pseudo-elem-WH(27, 27);
+      @include pos-TL(6, 19);
+      background: url('../img/sprite.png') -276px -255px;
+      pointer-events: none;
+    }
   }
 
-  li:not(:first-child) {
-    margin-left: 4px;
+  .sportsman {
+    @include absolute-elem-WH (455, 214);
+    @include pos-TR0;
+    background: url('../img/sprite.png');
   }
-}
 
-.shop-phone {
-  font-size: 24px;
-  font-weight: 700;
-  margin-left: 344px;
+  .logo-bg {
+    @include absolute-elem-WH (276, 120);
+    @include pos-BL0;
+    background: url('../img/sprite.png') 0 -214px;
+  }
+
+  .logo {
+    position: absolute;
+    @include pos-BL (6, 29);
+  }
+
+  .logo-bg, .logo {
+    z-index: 10;
+  }
 }
