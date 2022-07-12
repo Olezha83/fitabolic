@@ -24,7 +24,7 @@ a {
 
 header {
   position: relative;
-  padding-bottom: 14px;
+  padding-bottom: 15px;
 }
 
 header .flex-container, header .basket, header nav {
@@ -203,11 +203,149 @@ header .logo-bg {
 
 header .logo {
   position: absolute;
-  bottom: 6px;
+  bottom: 7px;
   left: 29px;
 }
 
 header .logo-bg, header .logo {
   z-index: 10;
+}
+
+.banner-wrapper {
+  position: relative;
+}
+
+.banner-wrapper .banner {
+  position: relative;
+  border: 10px solid;
+  margin-top: 31px;
+  overflow: hidden;
+  -o-border-image: url(../img/border-image.png) 20 18/2 1.8 stretch repeat;
+     border-image: url(../img/border-image.png) 20 18/2 1.8 stretch repeat;
+}
+
+.banner-wrapper .banner #banner-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: 0;
+  -webkit-transition: left 1s ease-in-out;
+  transition: left 1s ease-in-out;
+}
+
+.banner-wrapper .banner #banner-flex-container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 231px;
+  border-radius: 8px;
+  background: #000;
+}
+
+.banner-wrapper .banner #banner-flex-container .strongman {
+  margin-left: 95px;
+  width: 272px;
+  height: 100%;
+  background: url(../img/sprite.png);
+}
+
+.banner-wrapper .banner #banner-flex-container .what-for {
+  margin-left: 67px;
+  width: 244px;
+  height: 151px;
+  background: url(../img/sprite.png);
+}
+
+.banner-wrapper .banner #banner-flex-container .photo {
+  margin-left: 73px;
+  width: 106px;
+  height: 226px;
+  background: url(../img/sprite.png);
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-1 .strongman {
+  background-position: 0 -334px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-1 .what-for {
+  background-position: -272px -334px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-1 .photo {
+  background-position: -516px -334px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-2 .strongman {
+  background-position: 0 -565px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-2 .what-for {
+  background-position: -272px -565px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-2 .photo {
+  background-position: -516px -565px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-3 .strongman {
+  background-position: 0 -796px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-3 .what-for {
+  background-position: -272px -796px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-3 .photo {
+  background-position: -516px -796px;
+}
+
+.banner-wrapper #prev-button, .banner-wrapper #next-button {
+  position: absolute;
+  width: 23px;
+  height: 48px;
+  background: #ba9835;
+  border: 1px solid #000;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.banner-wrapper #prev-button {
+  left: -7px;
+}
+
+.banner-wrapper #next-button {
+  right: -8px;
+}
+
+.banner-wrapper #prev-button::before, .banner-wrapper #next-button::after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: 16px;
+  border: 1px solid #fff;
+  border-right: none;
+  border-top: none;
+}
+
+.banner-wrapper #prev-button::before {
+  left: 8px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.banner-wrapper #next-button::after {
+  right: 8px;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
 }
 /*# sourceMappingURL=main.css.map */

@@ -33,9 +33,8 @@ a {
 }
 
 header {
-  // outline: 1px solid wheat;
   position: relative;
-  padding-bottom: 14px;
+  padding-bottom: 15px;
   
   .flex-container, .basket, nav {
     z-index: 5;
@@ -99,7 +98,7 @@ header {
       button {
         width: 106px;
         height: 29px;
-        background: map-get($background-colors, button-bg);
+        background: $button-bg;
         font-weight: 700;
         border: 1px solid #000;
         margin: 6px 16px 5px 11px;
@@ -174,10 +173,138 @@ header {
 
   .logo {
     position: absolute;
-    @include pos-BL (6, 29);
+    @include pos-BL (7, 29);
   }
 
   .logo-bg, .logo {
     z-index: 10;
   }
 }
+
+.banner-wrapper {
+  position: relative;
+
+  .banner {
+    position: relative;
+    border: 10px solid;
+    margin-top: 31px;
+    overflow: hidden;
+    border-image: url(../img/border-image.png) 20 18 / 2 1.8 stretch repeat;
+    
+    #banner-flex-container {
+      display: flex;
+      position: relative;
+      left: 0;
+      transition: left 1s ease-in-out;
+      
+      &>div {
+        display: flex;
+        flex: 1 0 100%;
+        align-items: center;
+        height: 231px;
+        border-radius: 8px;
+        background: $banner-bg;
+      }
+    
+      .strongman {
+        margin-left: 95px;
+        width: 272px;
+        height: 100%;
+        background: url(../img/sprite.png)
+      }
+    
+      .what-for {
+        margin-left: 67px;
+        width: 244px;
+        height: 151px;
+        background: url(../img/sprite.png)
+      }
+    
+      .photo {
+        margin-left: 73px;
+        width: 106px;
+        height: 226px;
+        background: url(../img/sprite.png);
+      }
+    
+      .slide-1 {
+        .strongman {
+          background-position: 0 -334px;
+        }
+        
+        .what-for {
+          background-position: -272px -334px;
+        }
+    
+        .photo {
+          background-position: -516px -334px;
+        }
+      }
+    
+      .slide-2 {
+        .strongman {
+          background-position: 0 -565px;
+        }
+        
+        .what-for {
+          background-position: -272px -565px;
+        }
+    
+        .photo {
+          background-position: -516px -565px;
+        }
+      }
+        
+      .slide-3 {
+        .strongman {
+          background-position: 0 -796px;
+        }
+        
+        .what-for {
+          background-position: -272px -796px;
+        }
+    
+        .photo {
+          background-position: -516px -796px;
+        }
+      }
+    }
+  }
+
+  #prev-button, #next-button {
+    @include absolute-elem-WH (23, 48);
+    background: $button-bg;
+    border: 1px solid #000;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  #prev-button {
+    left: -7px;
+  }
+  
+  #next-button {
+    right: -8px;
+  }
+  
+  #prev-button::before, #next-button::after {
+    @include absolute-pseudo-elem-WH (13, 13);
+    top: 16px;
+    border: 1px solid #fff;
+    border-right: none;
+    border-top: none;
+  }
+
+  #prev-button::before {
+    left: 8px;
+    transform: rotate(45deg);
+  }
+
+  #next-button::after {
+    right: 8px;
+    transform: rotate(225deg);
+  }
+}
+
+
