@@ -1,5 +1,5 @@
 @import url(./reset.css);
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap');
 @import './background-colors';
 @import './text-colors';
 @import './gradients';
@@ -195,7 +195,7 @@ header {
       display: flex;
       position: relative;
       left: 0;
-      transition: left 1s ease-in-out;
+      transition: left .5s ease-in-out;
       
       &>div {
         display: flex;
@@ -268,24 +268,45 @@ header {
           background-position: -516px -796px;
         }
       }
+
+      .slide-4 {
+        .strongman {
+          background-position: 0 -1027px;
+        }
+        
+        .what-for {
+          background-position: -272px -1027px;
+        }
+    
+        .photo {
+          background-position: -516px -1027px;
+        }
+      }
     }
   }
 
   #prev-button, #next-button {
     @include absolute-elem-WH (23, 48);
-    background: $button-bg;
     border: 1px solid #000;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
   }
-
+  
   #prev-button {
     left: -7px;
   }
   
   #next-button {
     right: -8px;
+  }
+
+  .button-active {
+    background: $button-bg;
+  }
+
+  .button-muted {
+    background: $button-muted-bg;
   }
   
   #prev-button::before, #next-button::after {
@@ -306,5 +327,3 @@ header {
     transform: rotate(225deg);
   }
 }
-
-

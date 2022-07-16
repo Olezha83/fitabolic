@@ -1,5 +1,4 @@
 @import url(./reset.css);
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
 body {
   font-family: 'PT Sans Narrow', sans-serif;
   font-size: 14px;
@@ -230,8 +229,8 @@ header .logo-bg, header .logo {
   display: flex;
   position: relative;
   left: 0;
-  -webkit-transition: left 1s ease-in-out;
-  transition: left 1s ease-in-out;
+  -webkit-transition: left .5s ease-in-out;
+  transition: left .5s ease-in-out;
 }
 
 .banner-wrapper .banner #banner-flex-container > div {
@@ -306,11 +305,22 @@ header .logo-bg, header .logo {
   background-position: -516px -796px;
 }
 
+.banner-wrapper .banner #banner-flex-container .slide-4 .strongman {
+  background-position: 0 -1027px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-4 .what-for {
+  background-position: -272px -1027px;
+}
+
+.banner-wrapper .banner #banner-flex-container .slide-4 .photo {
+  background-position: -516px -1027px;
+}
+
 .banner-wrapper #prev-button, .banner-wrapper #next-button {
   position: absolute;
   width: 23px;
   height: 48px;
-  background: #ba9835;
   border: 1px solid #000;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -324,6 +334,14 @@ header .logo-bg, header .logo {
 
 .banner-wrapper #next-button {
   right: -8px;
+}
+
+.banner-wrapper .button-active {
+  background: #ba9835;
+}
+
+.banner-wrapper .button-muted {
+  background: #8b8b8b;
 }
 
 .banner-wrapper #prev-button::before, .banner-wrapper #next-button::after {
